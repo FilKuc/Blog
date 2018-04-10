@@ -1,7 +1,7 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
 
     <type name="Magento\Cms\Model\Page">
-        <plugin name="PromjeniNaslov" type="Filip\PrviModul\ChangeTitle" sortOrder="10"/>
+        <plugin name="PromjeniNaslov" type="Filip\PrviModul\Plugin\ChangeTitle" sortOrder="10"/>
 
     </type>
 
