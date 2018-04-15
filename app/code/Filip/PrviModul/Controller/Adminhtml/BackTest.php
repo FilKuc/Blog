@@ -8,7 +8,7 @@
 
 namespace Filip\PrviModul\Controller\Adminhtml;
 
-use Magento\Framework\Controller\Result\RawFactory;
+use Magento\Framework\Controller\Result\Raw;
 use Magento\Framework\App\Action\Context;
 
 class BackTest extends \Magento\Backend\App\Action
@@ -17,7 +17,7 @@ class BackTest extends \Magento\Backend\App\Action
 
     protected $pageFactory;
 
-    public function __construct(Context $context, PageFactory $pageFactory)
+    public function __construct(Context $context, Raw $pageFactory)
     {
         $this->pageFactory = $pageFactory;
         return parent::__construct($context);
