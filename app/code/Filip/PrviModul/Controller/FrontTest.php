@@ -8,15 +8,26 @@
 
 namespace Filip\PrviModul\Controller;
 
+use Magento\Framework\Controller\Result\RawFactory;
+use Magento\Framework\App\Action\Context;
 
 class FrontTest extends \Magento\Framework\App\Action\Action
 
 {
 
-    public function execute()
+    protected $pageFactory;
+
+    public function __construct(Context $context, PageFactory $pageFactory)
     {
-       echo 'Hello World';
+        $this->pageFactory = $pageFactory;
+        return parent::__construct($context);
     }
 
+    public function execute()
+    {
+        $result = $this->pageFactory->create();
+        $result->setContents('Hello World');
+        return $result;
+    }
 
 }
