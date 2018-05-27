@@ -9,7 +9,8 @@
 namespace Filip\PrviModul\Controller\Adminhtml;
 
 use Magento\Framework\Controller\Result\Raw;
-use Magento\Framework\App\Action\Context;
+use Magento\Backend\App\Action\Context;
+use Magento\Framework\View\Result\PageFactory as PageFac;
 
 class BackTest extends \Magento\Backend\App\Action
 
