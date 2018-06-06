@@ -11,6 +11,7 @@ namespace Filip\Blog\Setup;
 use Magento\Framework\Setup\InstallSchemaInterface;
 use Magento\Framework\Setup\SchemaSetupInterface;
 use Magento\Framework\Setup\ModuleContextInterface;
+use \Magento\Framework\DB\Ddl\Table;
 
 class InstallSchema implements InstallSchemaInterface
 {
@@ -23,30 +24,38 @@ class InstallSchema implements InstallSchemaInterface
         $table = $setup->getConnection()->newTable(
             $setup->getTable('Blog')
         )->addColumn(
+            'blog_id',
+            Table::TYPE_INTEGER,
+            null,
+            ['identity' => true, 'unsigned' => true, 'nullable' => false, 'primary' => true],
+            'Post ID'
+
+
+        )->addColumn(
 
             'Naslov',
-            \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
+            Table::TYPE_TEXT,
             255,
             [],
             'Naslov bloga'
 
         )->addColumn(
             'Sadrzaj',
-            \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
+            Table::TYPE_TEXT,
             '64k',
             [],
             'Sadrzaj bloga'
 
         )->addColumn(
             'Datum',
-            \Magento\Framework\DB\Ddl\Table::TYPE_TIMESTAMP,
+            Table::TYPE_TIMESTAMP,
             null,
-            ['nullable' => false, 'default' => \Magento\Framework\DB\Ddl\Table::TIMESTAMP_INIT],
+            ['nullable' => false, 'default' => Table::TIMESTAMP_INIT],
             'Datum objave bloga'
 
         )->addColumn(
             'Autor',
-            \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
+            Table::TYPE_TEXT,
             255,
             [],
             'Autor bloga'

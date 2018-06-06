@@ -1,0 +1,8 @@
+<?php /** @var Filip\Blog\Block\Blogovi $block */ ?>
+    <h1>Blogovi</h1>
+<?php foreach($block->getBlogs() as $blog): ?>
+    <?php /** @var Filip\Blog\Model\Blog */ ?>
+    <h2><a href="<?php echo $block->getBlogUrl($blog);?>"><?php echo $blog->getNaslov(); ?></a></h2>
+    <p><?php echo $blog->getSadrzaj(); ?></p>
+    <p><?php echo $blog->getAutor(); ?></p>
+<?php endforeach; ?>
