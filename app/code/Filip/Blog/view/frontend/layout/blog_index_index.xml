@@ -2,9 +2,9 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="content">
-            <block class="Filip\Blog\Block\Posts"
-                   name="posts.list"
-                   template="Filip_Blog::post/list.phtml" />
+            <block class="Filip\Blog\Block\View"
+                   name="index.list"
+                   template="Filip_Blog::index/list.phtml" />
         </referenceContainer>
     </body>
 </page>
